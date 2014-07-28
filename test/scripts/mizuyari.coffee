@@ -10,6 +10,7 @@ describe 'mizuyari', ->
     process.env.HUBOT_MIZUYARI_MEMBERS = '["bouzuya"]'
     @sinon.stub require('cron'), 'CronJob', (_, callback) =>
       @cronJobCallback = callback
+      { start: -> undefined }
     moment = require 'moment'
     @sinon.useFakeTimers moment('2014-07-26').valueOf(), 'Date'
     @kakashi.scripts = [require '../../src/scripts/mizuyari']
