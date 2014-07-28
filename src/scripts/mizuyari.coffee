@@ -30,8 +30,9 @@ module.exports = (robot) ->
   robot.respond /mizuyari$/i, (res) ->
     res.send "#{today.date} : #{today.member}" if today?
 
-  new CronJob schedule, ->
+  job = new CronJob schedule, ->
     today =
       date: moment().format('YYYY-MM-DD')
       member: members[Math.floor(Math.random() * members.length)]
     robot.messageRoom room, "@#{today.member} mizuyari today!(#{today.date})"
+  job.start()
