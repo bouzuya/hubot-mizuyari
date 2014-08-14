@@ -1,6 +1,6 @@
 {
   "name": "hubot-mizuyari",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "A Hubot script for mizuyari",
   "main": "index.js",
   "scripts": {
